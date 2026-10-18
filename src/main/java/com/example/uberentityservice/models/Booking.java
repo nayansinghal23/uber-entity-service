@@ -13,6 +13,9 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(indexes = {
+        @Index(columnList = "driver_id")
+})
 public class Booking extends BaseModel {
     @Enumerated(value = EnumType.STRING)
     private BookingStatus bookingStatus;
@@ -28,4 +31,10 @@ public class Booking extends BaseModel {
 
     @ManyToOne // Many bookings can have same passenger
     private Passenger passenger;
+
+    @OneToOne
+    private ExactLocation startLocation;
+
+    @OneToOne
+    private ExactLocation endLocation;
 }

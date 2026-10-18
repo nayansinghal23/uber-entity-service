@@ -36,5 +36,7 @@ public class Driver extends BaseModel {
 
     @DecimalMin(value = "0.00", message = "Rating should at least be 0.00")
     @DecimalMax(value = "5.00", message = "Rating must be less than or equal to 5.00")
-    private double rating; // avg_rating
+    private Double rating; // avg_rating
+
+    private boolean isAvailable;
 }
