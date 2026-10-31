@@ -25,6 +25,10 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
 
+            groupId = 'com.example'
+            artifactId = 'UberEntityService'
+            version = '0.0.4-SNAPSHOT'
+
             versionMapping {
                 usage('java-api') {
                     fromResolutionOf('runtimeClasspath')
@@ -37,13 +41,9 @@ publishing {
     }
 
     repositories {
-        maven {
-            name = 'LocalRepo'
-            url = uri("${rootProject.projectDir}/repo")
-        }
+        mavenLocal()
     }
 }
-
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
