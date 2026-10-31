@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.4-SNAPSHOT'
+version = '0.0.5-SNAPSHOT'
 description = 'UberEntityService'
 
 java {
@@ -27,7 +27,7 @@ publishing {
 
             groupId = 'com.example'
             artifactId = 'UberEntityService'
-            version = '0.0.4-SNAPSHOT'
+            version = '0.0.5-SNAPSHOT'
 
             versionMapping {
                 usage('java-api') {
