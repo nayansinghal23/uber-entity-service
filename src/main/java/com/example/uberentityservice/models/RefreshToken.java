@@ -2,10 +2,16 @@ package com.example.uberentityservice.models;
 
 import com.example.uberentityservice.enums.UserType;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.Instant;
 
 @Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "refresh_tokens")
 public class RefreshToken extends BaseModel {
     @Column(nullable = false)
