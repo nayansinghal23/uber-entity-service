@@ -3,7 +3,12 @@ name: Deploy UberEntityService to EC2
 on:
   push:
     branches:
-      - main
+      - master
+
+  pull_request:
+    branches:
+      - master
+
   workflow_dispatch:
 
 permissions:
