@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.6-SNAPSHOT'
+version = providers.gradleProperty('releaseVersion').getOrElse('0.0.6-SNAPSHOT')
 description = 'UberEntityService'
 
 java {
@@ -27,7 +27,7 @@ publishing {
 
             groupId = 'com.example'
             artifactId = 'UberEntityService'
-            version = '0.0.6-SNAPSHOT'
+            version = project.version.toString()
 
             versionMapping {
                 usage('java-api') {
@@ -42,6 +42,18 @@ publishing {
 
     repositories {
         mavenLocal()
+
+        maven {
+            name = 'GitHubPackages'
+            url = uri(
+                    'https://maven.pkg.github.com/nayansinghal23/uber-entity-service'
+            )
+
+            credentials {
+                username = System.getenv('GITHUB_ACTOR')
+                password = System.getenv('GITHUB_TOKEN')
+            }
+        }
     }
 }
 
