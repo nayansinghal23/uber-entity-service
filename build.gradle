@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = providers.gradleProperty('releaseVersion').getOrElse('0.0.6-SNAPSHOT')
+version = providers.gradleProperty('releaseVersion').getOrElse('0.0.7-SNAPSHOT')
 description = 'UberEntityService'
 
 java {

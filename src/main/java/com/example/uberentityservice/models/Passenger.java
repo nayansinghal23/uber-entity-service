@@ -24,6 +24,9 @@ public class Passenger extends BaseModel {
     @Column(nullable = false)
     private String phoneNumber;
 
+    @Column(name = "passenger_image")
+    private String passengerImage;
+
     @Column(nullable = false, unique = true)
     private String email;
 

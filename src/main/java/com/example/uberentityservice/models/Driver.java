@@ -22,6 +22,9 @@ public class Driver extends BaseModel {
     @Column(nullable = false, unique = true)
     private String licenseNumber;
 
+    @Column(name = "driver_image")
+    private String driverImage;
+
     @OneToMany(mappedBy = "driver") // A driver can have multiple bookings and each booking belongs to a particular driver
     private List<Booking> bookings = new ArrayList<>();
 
